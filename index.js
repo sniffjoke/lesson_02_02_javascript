@@ -93,3 +93,85 @@
 //     setLoading(false)
 //     console.log('finally')
 // })
+
+// const promise1 = new Promise((res, rej) => {
+//     setTimeout(() => {
+//         const data = 'hello'
+//         const err = 'something wrong'
+//         res(data)
+//         rej(err)
+//     }, 2000)
+// })
+
+// const promise2 = promise1.then((data) => {
+//     console.log('then1: ', data)
+// })
+
+// const promise3 = promise2.then((data) => {
+//     console.log('then2: ')
+// })
+
+// promise3.then((data) => {
+//     console.log('then3: ')
+// })
+
+// const promiseFetch = (url) => {
+//     return new Promise((res, rej) => {
+//         setTimeout(() => {
+//             const data = 'hello'
+//             const err = 'something wrong'
+//             // res(data)
+//             rej(err)
+//         }, 2000)
+//     })
+// }
+//
+// promiseFetch('https://google.com').then(
+//     (data) => {
+//         console.log('then1', data)
+//     },
+//     (err) => {
+//         console.log('error', err)
+//     }
+// )
+
+
+const promiseFetch = (url) => {
+    return new Promise((res, rej) => {
+        setTimeout(() => {
+            const data = 'hello'
+            const err = 'something wrong'
+            res(data)
+            // rej(err)
+        }, 2000)
+    })
+}
+
+promiseFetch('https://google.com')
+    .then((data) => {
+        console.log('data1: ', data)
+    })
+    .then((data) => {
+        console.log('data2: ', data)
+        return a
+    })
+    .catch((err) => {
+        console.log('error1: ', err)
+        return 40
+    })
+    .then((data) => {
+        console.log('data3: ', data)
+    })
+    .then((data) => {
+        console.log('data4: ', data)
+    })
+    .then((data) => {
+        console.log('data5: ', data)
+        return b
+    })
+    .catch(err => {
+        console.log('error2: ', err)
+    })
+    .finally(() => {
+        console.log('finally')
+    })

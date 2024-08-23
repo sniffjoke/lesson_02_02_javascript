@@ -51,18 +51,45 @@
 //
 // console.log(promise)
 
-const fs = require('fs')
+// const fs = require('fs')
+//
+// function readFileByPromise(url) {
+//     return new Promise((res, rej) => {
+//         fs.readFile(url, (err, data) => {
+//             if (err) {
+//                 rej(err)
+//             } else {
+//                 res(data)
+//             }
+//         })
+//     })
+// }
 
-function readFileByPromise(url) {
-    return new Promise((res, rej) => {
-        fs.readFile(url, (err, data) => {
-            if (err) {
-                rej(err)
-            } else {
-                res(data)
-            }
-        })
-    })
-}
+// import axios from 'axios'
+// const promise = axios.get('https://jsonplaceholder.typicode.com/posts/', {})
 
-export default readFileByPromise
+// const promise = new Promise((res, rej) => {
+//     setTimeout(() => {
+//         const data = 'hello'
+//         const err = 'something wrong'
+//         res(data)
+//         // rej(err)
+//     }, 2000)
+// })
+//
+// promise.then((data) => console.log(data))
+// promise.catch((err) => console.log('EROOR: ', err))
+// promise.finally(() => console.log('finally'))
+
+// const promise = axios.get('https://google.com', {})
+//
+// setLoading(true)
+//
+// promise.then((data) => {
+//     console.log(data)
+// })
+// promise.catch((err) => console.log('EROOR: ', err))
+// promise.finally(() => {
+//     setLoading(false)
+//     console.log('finally')
+// })

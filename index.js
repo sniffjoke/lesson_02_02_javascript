@@ -136,42 +136,87 @@
 // )
 
 
-const promiseFetch = (url) => {
-    return new Promise((res, rej) => {
-        setTimeout(() => {
-            const data = 'hello'
-            const err = 'something wrong'
-            res(data)
-            // rej(err)
-        }, 2000)
-    })
-}
+// const promiseFetch = (url) => {
+//     return new Promise((res, rej) => {
+//         setTimeout(() => {
+//             const data = 'hello'
+//             const err = 'something wrong'
+//             res(data)
+//             // rej(err)
+//         }, 2000)
+//     })
+// }
+//
+// promiseFetch('https://google.com')
+//     .then((data) => {
+//         console.log('data1: ', data)
+//         return new Promise()
+//     })
+//     .then((data) => {
+//         console.log('data2: ', data)
+//         return a
+//     })
+//     .catch((err) => {
+//         console.log('error1: ', err)
+//         return 40
+//     })
+//     .then((data) => {
+//         console.log('data3: ', data)
+//     })
+//     .then((data) => {
+//         console.log('data4: ', data)
+//     })
+//     .then((data) => {
+//         console.log('data5: ', data)
+//         return b
+//     })
+//     .catch(err => {
+//         console.log('error2: ', err)
+//     })
+//     .finally(() => {
+//         console.log('finally')
+//     })
 
-promiseFetch('https://google.com')
-    .then((data) => {
-        console.log('data1: ', data)
-    })
-    .then((data) => {
-        console.log('data2: ', data)
-        return a
-    })
-    .catch((err) => {
-        console.log('error1: ', err)
-        return 40
-    })
-    .then((data) => {
-        console.log('data3: ', data)
-    })
-    .then((data) => {
-        console.log('data4: ', data)
-    })
-    .then((data) => {
-        console.log('data5: ', data)
-        return b
-    })
-    .catch(err => {
-        console.log('error2: ', err)
-    })
-    .finally(() => {
-        console.log('finally')
-    })
+// callbackFetch(`https://books-store.com/authors/${data.id}`, (err, data) => {
+//     if (err) {
+//         console.log(err)
+//     } else {
+//         callbackFetch(`https://books-store.com/authors/authorId/${data.books}`, (err, data) => {
+//             if (err) {
+//                 console.log(err)
+//             } else {
+//                 callbackFetch(`https://books-store.com/authors/authorId/books/${data.booksId}`, (err, data) => {
+//                     if (err) {
+//                         console.log(err)
+//                     } else {
+//                         callbackFetch(`https://books-store.com/authors/${data.id}`, (err, data) => {
+//                             if (err) {
+//                                 console.log(err)
+//                             } else {
+//                                 callbackFetch(`https://books-store.com/authors/authorId/books/${data.booksId}`, (err, data) => {
+//                                     if (err) {
+//                                         console.log(err)
+//                                     } else {
+//                                         console.log('fksdalkjsakl')
+//                                     }
+//                                 })
+//                             }
+//                         })
+//                     }
+//                 })
+//             }
+//         })
+//     }
+// })
+//
+// promiseFetch(`https://books-store.com/authors`)
+//     .then(data => {
+//         return promiseFetch(`https://books-store.com/authors/${data.id}`)
+//     })
+//     .then(data => {
+//         return promiseFetch(`https://books-store.com/authors/authorId/${data.books}`)
+//     })
+//     .then(data => {
+//         return callbackFetch(`https://books-store.com/authors/authorId/books/${data.booksId}`)
+//     })
+//     .catch(err => console.log(err))
